@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Json List</title>
+<style>
+	* {
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+}
+	body {
+		text-align: center;
+	}
+table, td {
+  border:1px solid black;
+}
+	table {
+		margin: auto;
+	}
+</style>
+</head>
+<body>
+	<h1>Stephen's List of Songs</h1>
+<table id = "songTable">
+  <tr>
+    <td id = "1"></td>
+    <td id = "2"></td>
+    <td id = "3"></td>
+	<td id = "4"></td>
+	<td id = "5"></td>
+	<td id = "6"></td>
+  </tr>
+  <tr>
+    <td id = "7"></td>
+    <td id = "8"></td>
+	<td id = "9"></td>
+	<td id = "10"></td>
+	<td id = "11"></td>
+	<td id = "12"></td>
+  </tr>
+</table>
+ <script>
+	/*list = [{"songList":{"listName":"Stephen's List of Songs!","song":[{"number":1,"artist":"Foo Fighters","title":"Learn to Fly","genre":["Alternative","Rock"],"releaseYear":1999},{"number":2,"artist":"DJ Shadow","title":"Rocket Fuel","genre":["Alternative","Rap","Indie"],"releaseYear":2019},{"number":3,"artist":"Cage the Elephant","title":"Ain't No Rest for the Wicked","genre":["Alternative","Rock"],"releaseYear":2008},{"number":4,"artist":"Black Sabbath","title":"War Pigs","genre":["Heavy Metal"],"releaseYear":1970},{"number":5,"artist":"Creedence Clearwater Revival","title":"Fortunate Son","genre":["Hard Rock","Folk"],"releaseYear":1969},{"number":6,"artist":"Garth Brooks","title":"The Thunder Rolls","genre":["Country"],"releaseYear":1991},{"number":7,"artist":"Chemical Brothers","title":"Block Rockin' Beats","genre":["Alternative","Electronic"],"releaseYear":1997},{"number":8,"artist":"Beastie Boys","title":"Sabatoge","genre":["Rap Rock","Punk Rock"],"releaseYear":1994},{"number":9,"artist":"My Chemical Romance","title":"Welcome to the Black Parade","genre":["Alternative","Emo","Pop Punk"],"releaseYear":2006},{"number":10,"artist":"John Williams","title":"Duel of the Fates","genre":["Classical"],"releaseYear":1999},{"number":11,"artist":"Led Zeppelin","title":"Immigrant Song","genre":["Hard Rock","Viking Metal"],"releaseYear":1970},{"number":12,"artist":"Nirvana","title":"Something in the Way","genre":["Acoustic Rock","Alternative"],"releaseYear":1991}]}}]*/
+	//var listStr = JSON.stringify(list);
+	//document.writeln(listStr);
+	var jsonFile = new XMLHttpRequest();
+	jsonFile.open("GET", "songlist.json", true);
+	jsonFile.send();
+	var list = JSON.parse(jsonFile);
+	for (var i = 0; i < 12; i++) {
+		document.getElementById(i + 1).innerHTML += ("Song number: " + list[0].songList.song[i].number);
+		document.getElementById(i + 1).innerHTML += ("<br>");
+		document.getElementById(i + 1).innerHTML += ("Song name: " + list[0].songList.song[i].title);
+		document.getElementById(i + 1).innerHTML += ("<br>");
+		document.getElementById(i + 1).innerHTML += ("Artist: " +list[0].songList.song[i].artist);
+		document.getElementById(i + 1).innerHTML += ("<br>");
+		
+		document.getElementById(i + 1).innerHTML += ("Genre: ");
+		for (var j = 0; j < list[0].songList.song[i].genre.length; j++) {
+			document.getElementById(i + 1).innerHTML += (list[0].songList.song[i].genre[j]);
+			if (j <  list[0].songList.song[i].genre.length-1) {
+				document.getElementById(i + 1).innerHTML += (", ");
+			}
+			
+		}
+		document.getElementById(i + 1).innerHTML += ("<br>");
+		document.getElementById(i + 1).innerHTML += ("Released: " + list[0].songList.song[i].releaseYear);
+		document.getElementById(i + 1).innerHTML += ("<br>");
+	}
+function filterFunc() {
+	document.getElementById("printHere").innerHTML = "";
+	var chosenGenre = document.getElementById("genre").value;
+	for (i = 0; i < 12; i++) {
+		for (var j = 0; j < list[0].songList.song[i].genre.length; j++)
+			if (list[0].songList.song[i].genre[j] == chosenGenre) {
+				document.getElementById("printHere").innerHTML += (list[0].songList.song[i].title);
+				document.getElementById("printHere").innerHTML += "<br>";
+
+			}
+	}
+}
+</script>
+<form id = "get songs">
+		<select name="genre" id="genre">
+		<option value="Alternative">Alternative</option>
+  	    <option value="Rock">Rock</option>
+        <option value="Rap">Rap</option>
+        <option value="Indie">Indie</option>
+		<option value="Heavy Metal">Heavy Metal</option>
+		<option value="Hard Rock">Hard Rock</option>
+		<option value="Folk">Folk</option>
+		<option value="Country">Country</option>
+		<option value="Rap Rock">Rap Rock</option>
+		<option value="Punk Rock">Punk Rock</option>
+		<option value="Emo">Emo</option>
+		<option value="Pop Punk">Pop Punk</option>
+		<option value="Classical">Classical</option>
+		<option value="Viking Metal">Viking Metal</option>
+		<option value="Acoustic Rock">Acoustic Rock</option>
+		<option value="Electronic">Electronic</option>
+		</select>
+		<input type = "button" value = "filter"  id = "filter" onclick = "filterFunc()"/>
+	</form>
+	<div id = "printHere"></div>
+</body>
+</html>
