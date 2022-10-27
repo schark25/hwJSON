@@ -6,7 +6,7 @@
         "number": 1,
         "artist": "Foo Fighters",
         "title": "Learn to Fly",
-        "genre": [ "Alternative", "Rock", ],
+        "genre": [ "Alternative", "Rock"],
         "releaseYear": 1999
       },
       {
@@ -82,7 +82,7 @@
         "number": 12,
         "artist": "Nirvana",
         "title": "Something in the Way",
-        "genre": ["Acoustic Rock","Alternative",],
+        "genre": ["Acoustic Rock","Alternative"],
         "releaseYear": 1991
       }
     ]
