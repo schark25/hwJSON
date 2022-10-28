@@ -1,88 +1,124 @@
 {
-  "songList" : {
+  "songList": {
     "listName": "Stephen's List of Songs!",
     "song": [
       {
         "number": 1,
         "artist": "Foo Fighters",
         "title": "Learn to Fly",
-        "genre": [ "Alternative", "Rock"],
+        "genre": [
+          "Alternative",
+          "Rock"
+        ],
         "releaseYear": 1999
       },
       {
         "number": 2,
         "artist": "DJ Shadow",
         "title": "Rocket Fuel",
-        "genre": ["Alternative", "Rap", "Indie"],
-        "releaseYear": 2019 },
+        "genre": [
+          "Alternative",
+          "Rap",
+          "Indie"
+        ],
+        "releaseYear": 2019
+      },
       {
         "number": 3,
         "artist": "Cage the Elephant",
         "title": "Ain't No Rest for the Wicked",
-        "genre": [ "Alternative", "Rock"],
+        "genre": [
+          "Alternative",
+          "Rock"
+        ],
         "releaseYear": 2008
       },
       {
         "number": 4,
         "artist": "Black Sabbath",
         "title": "War Pigs",
-        "genre": ["Heavy Metal"],
+        "genre": [
+          "Heavy Metal"
+        ],
         "releaseYear": 1970
       },
       {
         "number": 5,
         "artist": "Creedence Clearwater Revival",
         "title": "Fortunate Son",
-        "genre": [ "Hard Rock", "Folk"],
+        "genre": [
+          "Hard Rock",
+          "Folk"
+        ],
         "releaseYear": 1969
       },
       {
         "number": 6,
         "artist": "Garth Brooks",
         "title": "The Thunder Rolls",
-        "genre": ["Country"],
+        "genre": [
+          "Country"
+        ],
         "releaseYear": 1991
       },
       {
         "number": 7,
         "artist": "Chemical Brothers",
         "title": "Block Rockin' Beats",
-        "genre": ["Alternative","Electronic" ],
+        "genre": [
+          "Alternative",
+          "Electronic"
+        ],
         "releaseYear": 1997
       },
       {
         "number": 8,
         "artist": "Beastie Boys",
         "title": "Sabatoge",
-        "genre": ["Rap Rock", "Punk Rock"],
+        "genre": [
+          "Rap Rock",
+          "Punk Rock"
+        ],
         "releaseYear": 1994
       },
       {
         "number": 9,
         "artist": "My Chemical Romance",
         "title": "Welcome to the Black Parade",
-        "genre": [ "Alternative", "Emo", "Pop Punk" ],
+        "genre": [
+          "Alternative",
+          "Emo",
+          "Pop Punk"
+        ],
         "releaseYear": 2006
       },
       {
         "number": 10,
         "artist": "John Williams",
         "title": "Duel of the Fates",
-        "genre": ["Classical"],
+        "genre": [
+          "Classical"
+        ],
         "releaseYear": 1999
       },
       {
         "number": 11,
         "artist": "Led Zeppelin",
         "title": "Immigrant Song",
-        "genre": ["Hard Rock", "Viking Metal"],
+        "genre": [
+          "Hard Rock",
+          "Viking Metal"
+        ],
         "releaseYear": 1970
       },
       {
         "number": 12,
         "artist": "Nirvana",
         "title": "Something in the Way",
-        "genre": ["Acoustic Rock","Alternative"],
+        "genre": [
+          "Acoustic Rock",
+          "Alternative"
+        ],
         "releaseYear": 1991
       }
     ]
